@@ -1,0 +1,22 @@
+{
+  "name": "my-first-repo",
+  "version": "1.0.0",
+  "description": "Привет! Меня зовут Игорь. Я учусь пользоваться Git и GitHub.\r Учусь в БГУИР. Люблю смотреть футбол и играть в CS2\r Телефон: 445488828\r e-mail: igorsavickij47@gmail.com",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorSavitski/my-first-repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorSavitski/my-first-repo/issues"
+  },
+  "homepage": "https://github.com/IgorSavitski/my-first-repo#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0"
+  }
+}
