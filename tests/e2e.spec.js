@@ -1,13 +1,23 @@
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "../PageObjects/LoginPage.js";
+import { InventoryPage } from "../PageObjects/InventoryPage.js";
+import { CartPage } from "../PageObjects/CartPage.js";
+import { CheckoutStepOnePage } from "../PageObjects/CheckoutStepOnePage.js";
+import { CheckoutStepTwoPage } from "../PageObjects/CheckoutStepTwoPage.js";
+import { CheckoutCompletePage } from "../PageObjects/CheckoutCompletePage.js";
 
 test.describe("End-to-End Purchase Flow", () => {
   test("should complete a purchase successfully", async ({ page }) => {
     const loginPage = new LoginPage(page);
+    const inventoryPage = new InventoryPage(page);
+    const cartPage = new CartPage(page);
+    const checkoutStepOnePage = new CheckoutStepOnePage(page);
+    const checkoutStepTwoPage = new CheckoutStepTwoPage(page);
+    const checkoutCompletePage = new CheckoutCompletePage(page);
 
     await loginPage.open();
 
-    const inventoryPage = await loginPage.login(
+    await loginPage.login(
       "standard_user",
       "secret_sauce"
     );
@@ -17,11 +27,11 @@ test.describe("End-to-End Purchase Flow", () => {
     await inventoryPage.sortByPriceHighToLow();
     await inventoryPage.addToCartButtons.nth(0).click();
     
-    const cartPage = await inventoryPage.openCart();
+    await inventoryPage.openCart();
 
     expect(cartPage.cartList.nth(0).locator('.inventory_item_name')).toHaveText('Sauce Labs Fleece Jacket');
 
-    const checkoutStepOnePage = await cartPage.goToCheckout();
+    await cartPage.goToCheckout();
 
     await expect(checkoutStepOnePage.page).toHaveURL(
       "https://www.saucedemo.com/checkout-step-one.html"
@@ -29,9 +39,9 @@ test.describe("End-to-End Purchase Flow", () => {
 
     await checkoutStepOnePage.fillUserInfo("Test", "User", "12345");
 
-    const checkoutStepTwoPage = await checkoutStepOnePage.pressContinueButton();
+    await checkoutStepOnePage.pressContinueButton();
 
-    const checkoutCompletePage = await checkoutStepTwoPage.finishCheckout();
+    await checkoutStepTwoPage.finishCheckout();
 
     await expect(checkoutCompletePage.getCompletionMessage()).toBeVisible();
   });

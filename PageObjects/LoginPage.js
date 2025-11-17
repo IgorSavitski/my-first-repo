@@ -1,4 +1,4 @@
-import { InventoryPage } from './InventoryPage.js';
+
 export class LoginPage {
     constructor(page) {
         this.page = page
@@ -7,6 +7,7 @@ export class LoginPage {
         this.loginButton = page.locator('[data-test="login-button"]');
         this.errorContainer = page.locator('[data-test="error"]');
     }
+
     async open() {
         await this.page.goto('https://www.saucedemo.com/');
     }
@@ -14,6 +15,5 @@ export class LoginPage {
         await this.usernameInput.fill(username);
         await this.passwordInput.fill(password);
         await this.loginButton.click();
-        return new InventoryPage(this.page);
     }
 }

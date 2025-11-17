@@ -1,4 +1,3 @@
-import { CheckoutCompletePage } from './CheckoutCompletePage.js';
 export class CheckoutStepTwoPage {
     constructor(page) {
         this.page = page
@@ -6,8 +5,8 @@ export class CheckoutStepTwoPage {
         this.summaryPrice = page.locator('[data-test="total-label"]');
         this.finishButton = page.locator('[data-test="finish"]');
     }
+
     async finishCheckout() {
         await this.finishButton.click();
-        return new CheckoutCompletePage(this.page);
     }
 }

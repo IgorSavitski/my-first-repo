@@ -1,4 +1,3 @@
-import { CheckoutStepOnePage } from './CheckoutStepOnePage.js';
 export class CartPage {
     constructor(page) {
         this.page = page;
@@ -6,9 +5,9 @@ export class CartPage {
         this.checkoutButton = page.locator('[data-test="checkout"]');
         this.continueShoppingButton = page.locator('[data-test="continue-shopping"]');
     }
+    
     async goToCheckout() {
         await this.checkoutButton.click();
-        return new CheckoutStepOnePage(this.page);
     }
     async goContinueShopping() {
         await this.continueShoppingButton.click();

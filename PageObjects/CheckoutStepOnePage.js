@@ -1,4 +1,3 @@
-import { CheckoutStepTwoPage } from './CheckoutStepTwoPage';
 export class CheckoutStepOnePage {
     constructor(page) {
         this.page = page
@@ -7,6 +6,7 @@ export class CheckoutStepOnePage {
         this.postalCodeInput = page.locator('[data-test="postalCode"]')
         this.continueButton = page.locator('[data-test="continue"]');
     }
+    
     async fillUserInfo(firstName, lastName, postalCode) {
         await this.firstNameInput.fill(firstName);
         await this.lastNameInput.fill(lastName);
@@ -14,6 +14,5 @@ export class CheckoutStepOnePage {
     }
     async pressContinueButton() {
         await this.continueButton.click();
-        return new CheckoutStepTwoPage(this.page);
     }
 }

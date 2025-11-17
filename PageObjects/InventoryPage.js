@@ -1,4 +1,3 @@
-import { CartPage } from './CartPage.js';
 export class InventoryPage {
     constructor(page) {
         this.page = page
@@ -7,9 +6,9 @@ export class InventoryPage {
         this.productsList = page.locator('//*[@data-test="inventory-list"]');
         this.addToCartButtons = page.locator('//button[text()="Add to cart"]');
     }
+
     async openCart() {
         await this.cartIcon.click();
-        return new CartPage(this.page);
     }
     async addItemToCart(itemName) {
         await this.page.locator(`/*[text()="${itemName}"]/ancestor::div[1]/following-sibling::div/button`).click();
