@@ -1,7 +1,8 @@
 name: Manual Test Run
 
 on:
-  workflow_dispatch: # Этот триггер позволяет запускать пайплайн вручную
+  workflow_dispatch: 
+    branches: [master]
 
 jobs:
   run-tests:
