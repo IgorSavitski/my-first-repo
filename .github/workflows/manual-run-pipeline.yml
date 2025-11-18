@@ -30,7 +30,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with: 
         name: playwright-report-ui
-        path: playwright-report-ui/ 
+        path: playwright-report/ 
         retention-days: 7
 
     - name: Upload API test report
@@ -38,5 +38,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with: 
         name: playwright-report-api
-        path: playwright-report-api/ 
+        path: playwright-report/ 
         retention-days: 7
