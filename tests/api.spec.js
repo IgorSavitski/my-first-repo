@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { log } from "console";
 
-test.describe("CRUD methods", () => {
+test.describe("@CRUD methods", () => {
   test.describe.configure({ mode: 'serial' });
   const baseURL = "https://restful-booker.herokuapp.com";
   let id;

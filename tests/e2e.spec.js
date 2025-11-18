@@ -7,7 +7,7 @@ import { CheckoutStepTwoPage } from "../PageObjects/CheckoutStepTwoPage.js";
 import { CheckoutCompletePage } from "../PageObjects/CheckoutCompletePage.js";
 
 test.describe("End-to-End Purchase Flow", () => {
-  test("should complete a purchase successfully", async ({ page }) => {
+  test("should complete a @purchase successfully", async ({ page }) => {
     const loginPage = new LoginPage(page);
     const inventoryPage = new InventoryPage(page);
     const cartPage = new CartPage(page);

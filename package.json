@@ -4,8 +4,8 @@
   "description": "Привет! Меня зовут Игорь. Я учусь пользоваться Git и GitHub.\r Учусь в БГУИР. Люблю смотреть футбол и играть в CS2\r Телефон: 445488828\r e-mail: igorsavickij47@gmail.com",
   "main": "index.js",
   "scripts": {
-    "tests:ui": "npx playwright test --grep @e2e",
-    "tests:api": "npx playwright test --grep @api",
+    "tests:ui": "npx playwright test --grep @purchase",
+    "tests:api": "npx playwright test --grep @CRUD",
     "tests:all": "npx playwright test"
   },
   "repository": {
